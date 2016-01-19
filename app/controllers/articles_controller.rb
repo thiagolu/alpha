@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :find_model, only: [ :show, :edit, :update ]
+	before_action :find_model, only: [ :show, :edit, :update, :destroy ]
 
 	def index
 		@articles = Article.all		
@@ -34,6 +34,12 @@ class ArticlesController < ApplicationController
 			render 'new'
 		end
 	end	
+
+	def destroy
+		@article.destroy
+		flash[:notice] = "Article destroyed"
+		redirect_to articles_path
+	end
 
 	private
 
