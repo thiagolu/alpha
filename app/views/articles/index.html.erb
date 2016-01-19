@@ -1,5 +1,19 @@
 <h1>Nois</h1>
+<hr>
+<%= link_to "Create a new Article", new_article_path %> 
+<hr>
+<table>
+	<tr>
+		<th><h5>Title</h5></th>
+		<th><h5>Description</h5></th>
+	</tr>
 
 <% @articles.each do |article| %>
-	<h5><%= article.title %></h5>
+	<tr>
+		<td><%= article.title %></td>
+		<td><%= article.description %></td>
+		<td><%= link_to 'Edit', edit_article_path(article) %></td>
+		<td><%= link_to 'Show', article_path(article) %></td>
+	</tr>
 <% end %>
+</table>
