@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FirstBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>FirstBlog</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/messages'%>
-<%= yield %>
-<%= link_to 'Home', root_path %>
-<%= link_to 'Articles', articles_path %>
+	<%= render 'layouts/messages'%>
+	<%= render 'layouts/navigation'%>
+
+	<div class="container">
+		
+		<%= yield %>
+	</div>
 
 </body>
 </html>

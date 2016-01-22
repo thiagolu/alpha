@@ -2,8 +2,17 @@
 <hr>
 <%= link_to "Create a new Article", new_article_path %> 
 <hr>
-<table>
-	<tr>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Articles List</div>
+  <div class="panel-body">
+    <p>List of articles and users</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    	<tr>
 		<th><h5>Title</h5></th>
 		<th><h5>Description</h5></th>
 	</tr>
@@ -17,4 +26,5 @@
 		<td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
 	</tr>
 <% end %>
-</table>
+  </table>
+</div>
