@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_filter :find_user
+
 	def new
 		@user = User.new
 	end
@@ -35,6 +37,6 @@ class UsersController < ApplicationController
 	end
 
 	def find_user
-		@user = Users.find(params[:id]) if params[:id]
+		@user = User.find(params[:id]) if params[:id]
 	end
 end
