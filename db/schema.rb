@@ -23,4 +23,12 @@ ActiveRecord::Schema.define(version: 20160116232831) do
     t.datetime "updated_at"
   end
 
+  create_table "bills", force: :cascade do |t|
+    t.string   "bill_name"
+    t.text     "description"
+    t.decimal  "value"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
 end

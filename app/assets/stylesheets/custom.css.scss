@@ -1,3 +1,55 @@
-$navbar-default-bg: #FFFABD;
+$navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.btn-index {
+	margin-top: 200px;
+	font-size: 2em;
+	width: 30%;
+	background-color: white;
+}
+
+.jumbotron  {
+	background-image:  asset-url('sea_sunset.jpeg');
+	background-size: cover;
+	height: 900px;
+	align-content: center;
+}
+
+.navbar .navbar-brand {
+	font-weight: bold;
+	
+}
+
+#logo {
+	float: left;
+	text-transform: uppercase;
+}
+
+.jumbotron h2 {
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.center{
+	text-align: center;
+}
+
+.footer {
+	margin-top: 50px;
+	padding-top: 10px;
+	font-size: 1.2em;
+}
+
+.footer small {
+	float: left;
+}
+
+.footer ul {
+	float: right;
+}
+
+.footer ul li {
+	list-style-type: none;
+}

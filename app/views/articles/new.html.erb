@@ -6,17 +6,10 @@
 	<% end %>
 	<% end %>
 </ul>
-<h2> Create an Article</h2>
 
-<%= form_for @article do |f| %>
-<p>
-	<%= f.label :title %> <br/>
-	<%= f.text_field :title %>
-</p>
-<p>
-	<%= f.label :description %> <br/>
-	<%= f.text_area :description %>
-</p>
-<%= f.submit "Save" %>
-<%= link_to "Home", root_path %>
-<% end %>
+<div class="container">
+	
+	<h2> Create an Article</h2>
+	<%= render 'form' %>
+	<%= link_to "Home", root_path %>
+</div>
