@@ -1,30 +1,27 @@
 <h1>Nois</h1>
 <hr>
-<%= link_to "Create a new Article", new_article_path %> 
+<div align="center">
+	
+<%= link_to "Create a new Article", new_article_path, class: "btn btn-lg btn-success" %>
+</div>
 <hr>
 
-<div class="panel panel-default">
-	<!-- Default panel contents -->
-	<div class="panel-heading">Articles List</div>
-	<div class="panel-body">
-		<p>List of articles and users</p>
+<!-- Default panel contents -->
+<h3 align="center">Articles List
+</h3>
+
+<% @articles.each do |article| %>
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-2">
+		<div class="well well-lg">
+			<div class="article-title"><%= link_to article.title %></div>
+			<div class="article-body"><%= truncate(article.description, length: 100) %></div>
+			<div class="article-actions">			
+				<%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %> 
+				<%= link_to "Delete this article", article_path(article), method: :delete, data: { confirm: "Are you sure?" } ,class: "btn btn-xs btn-danger" %> 
+				<%= link_to "All Articles", articles_path, class: "btn btn-xs btn-success" %> 
+			</div>
+		</div>
 	</div>
-
-	<!-- Table -->
-	<table class="table">
-		<tr>
-			<th><h5>Title</h5></th>
-			<th><h5>Description</h5></th>
-		</tr>
-
-		<% @articles.each do |article| %>
-		<tr>
-			<td><%= article.title %></td>
-			<td><%= article.description %></td>
-			<td><%= link_to 'Edit', edit_article_path(article) %></td>
-			<td><%= link_to 'Show', article_path(article) %></td>
-			<td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
-		</tr>
-		<% end %>
-	</table>
 </div>
+<% end %>
