@@ -1,17 +1,8 @@
-<h1>Nois</h1>
-<hr>
-<div class="container">
-	<div class="container center">
-		<%= link_to "Create a new Article", new_article_path, class: "btn btn-lg btn-success" %>
-	</div>
-</div>
-<hr>
-<!-- Default panel contents -->
 <div class="row center">
+<h2 align="center">Articles List</h2>
+<hr>
 <%= will_paginate %>
 </div>
-<h3 align="center">Articles List
-</h3>
 <%= render 'article', obj: @articles %>
 <div class="row center">
 <%= will_paginate %>
