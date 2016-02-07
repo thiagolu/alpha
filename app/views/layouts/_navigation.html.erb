@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default navbar-center">
+
+<nav class="navbar navbar-inverse navbar-center">
 	<div class="container">
 		<%= link_to "Thiago Lu Silva", root_path, class: "navbar-brand", id: "logo" %>
 		<ul class="nav navbar-nav navbar">
@@ -12,9 +13,12 @@
 					<li><%= link_to "About", about_path %></li>
 				</ul>
 			</li>
-			<li><%= link_to 'Login', login_path %></li>
-			<li><%=link_to 'Contas', bills_index_path %></li>
+<% if logged_in? %>
 			<li><%=link_to 'Logout', logout_path, method: :delete %></li>
+<% else %>
+			<li><%= link_to 'Login', login_path %></li>
+<% end %>
+			<li><%=link_to 'Contas', bills_index_path %></li>
 		</ul>
 	</div>
 </nav>

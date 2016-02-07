@@ -1,4 +1,4 @@
-$navbar-default-bg: black;
+$navbar-default-bg: #242020;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -74,4 +74,9 @@ $navbar-default-bg: black;
 
 .footer ul li {
 	list-style-type: none;
+}
+
+.about {
+	color: #aaaaaa;
+	text-shadow: 0.5px 1px #d8d4cb;
 }
