@@ -1,0 +1,17 @@
+<div class="row">
+	<h2 align="center">Usuários</h2>
+	<div align="left" class="container">
+		<div class="col-xs-8 col-xs-offset-2">
+			<div class="well">
+				<% @users.each do |user| %>
+					<div class="row">
+						<br/>
+						<%= link_to gravatar_for(user), user_path(user) %>
+						<h4><strong><%= user.username.capitalize %></strong></h4>
+						<small><%= pluralize(user.articles.count, 'article') if user.articles.any? %></small>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
