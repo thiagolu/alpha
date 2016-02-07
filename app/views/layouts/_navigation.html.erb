@@ -1,24 +1,28 @@
 
 <nav class="navbar navbar-inverse navbar-center">
-	<div class="container">
+	<div class="container-fluid">
 		<%= link_to "Thiago Lu Silva", root_path, class: "navbar-brand", id: "logo" %>
 		<ul class="nav navbar-nav navbar">
-			<li><%=link_to 'Home', root_path %></li>
+			<li><%=link_to 'Artilces', articles_path %></li>
+			<% if logged_in? %>
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><%= link_to "Articles List", articles_path %></li>
+					<li><%= link_to "Profile", user_path(current_user) %></li>
 					<li><%= link_to "New Article", new_article_path %></li>
 					<li role="separator" class="divider"></li>
-					<li><%= link_to "About", about_path %></li>
+					<li><%=link_to 'Contas', bills_index_path %></li>
 				</ul>
 			</li>
-<% if logged_in? %>
-			<li><%=link_to 'Logout', logout_path, method: :delete %></li>
-<% else %>
+			<% else %>
 			<li><%= link_to 'Login', login_path %></li>
-<% end %>
-			<li><%=link_to 'Contas', bills_index_path %></li>
+			<% end %>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<% if logged_in? %>
+			<li><%=link_to 'Logout', logout_path, method: :delete %></li>
+			<% end %>
+			<li><%= link_to "About", about_path %></li>
 		</ul>
 	</div>
 </nav>
