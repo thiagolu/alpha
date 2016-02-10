@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  get 'header', to: 'welcome#header'
   resources :users, except: 'new'
   resources :articles
 

@@ -1,9 +1,12 @@
+<div class="container">
+	
 <div class="row center">
-<h2 align="center">Articles List</h2>
-<hr>
-<%= will_paginate %>
+	<h2 align="center">Articles List</h2>
+	<hr>
+	<%= will_paginate %>
 </div>
 <%= render 'article', obj: @articles %>
 <div class="row center">
-<%= will_paginate %>
+	<%= will_paginate %>
+</div>
 </div>
