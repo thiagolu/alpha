@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	before_filter :find_user
+	before_action :require_same_user, only: [:edit, :update]
 
 	def index
 		@users = User.all
@@ -45,5 +46,12 @@ class UsersController < ApplicationController
 
 	def find_user
 		@user = User.find(params[:id]) if params[:id]
+	end
+
+	def require_same_user
+		if current_user != @user
+			flash[:danger]= "You can't do this"
+			redirect_to root_path
+		end
 	end
 end
