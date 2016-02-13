@@ -22,6 +22,14 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def destroy
+		if @user.role == "admin" 
+			@user.destroy
+			flash[:danger] =  "Destroy"
+			redirect_to users_path
+		end
+	end
+
 	def show
 		@user_articles = @user.articles.paginate(page: params[:page], per_page: 2)
 	end
@@ -55,4 +63,9 @@ class UsersController < ApplicationController
 			redirect_to root_path
 		end
 	end
+
+  def admin?
+    current_user.role == "admin"
+  end
+
 end

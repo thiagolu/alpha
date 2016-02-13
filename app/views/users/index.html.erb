@@ -9,6 +9,9 @@
 						<%= link_to gravatar_for(user), user_path(user) %>
 						<h4><strong><%= user.username.capitalize %></strong></h4>
 						<small><%= pluralize(user.articles.count, 'article') if user.articles.any? %></small>
+						<% if user.role == 'admin' %>
+						<%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: "Are You sure ?" } %>
+						<% end %>
 					</div>
 				<% end %>
 			</div>
