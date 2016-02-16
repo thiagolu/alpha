@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'index', to: 'welcome#index'
   get 'about', to: 'welcome#about'
   get 'bills/index', to: 'bills#index'
@@ -12,8 +13,11 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'header', to: 'welcome#header'
+  
+  
   resources :users, except: 'new'
   resources :articles
+  resources :categories, except: [:destroy]
 
 
   root 'welcome#index'
