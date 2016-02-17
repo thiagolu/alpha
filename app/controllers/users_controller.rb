@@ -64,8 +64,5 @@ class UsersController < ApplicationController
 		end
 	end
 
-  def admin?
-    current_user.role == "admin"
-  end
 
 end

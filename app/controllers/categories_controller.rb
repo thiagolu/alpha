@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
 
+	before_action :admin?, only: [ :create, :new, :edit ]
+
 	def index
-		@categories = Category.all
+		@categories = Category.paginate(page: params[:page], per_page: 1)
 	end
 
 	def new
@@ -20,7 +22,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
-		
+		@category = Category.find(params[:id])
 	end
 
 	private

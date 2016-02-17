@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories, except: [:destroy]
 
   get 'index', to: 'welcome#index'
   get 'about', to: 'welcome#about'
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
   
   resources :users, except: 'new'
   resources :articles
-  resources :categories, except: [:destroy]
 
 
   root 'welcome#index'
