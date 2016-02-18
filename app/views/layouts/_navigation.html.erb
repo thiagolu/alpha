@@ -3,6 +3,7 @@
 		<%= link_to "Thiago Lu Silva", root_path, class: "navbar-brand", id: "logo" %>
 		<ul class="nav navbar-nav navbar">
 			<li><%=link_to 'Artilces', articles_path %></li>
+			<li><%=link_to 'Categories', categories_path %></li>
 			<% if logged_in? %>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
