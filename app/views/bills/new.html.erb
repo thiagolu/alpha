@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="col-sm-8">
+          <%= form_for( @bill, :html => { class: "form-horizontal", role: "form" } ) do |f| %>
+            <div class="form-group">
+              <%= f.label 'bill[name]', 'Entre o nome da Conta' %>
+              <%= f.text_field :bill_name, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label 'bill[description]', 'Qual a descrição?' %>
+              <%= f.text_field :description, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-2">
+                <%= f.label 'bill[value]', 'Valor?' %>
+                <%= f.text_field :value, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit 'Criar Conta' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

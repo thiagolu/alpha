@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get 'index', to: 'welcome#index'
   get 'about', to: 'welcome#about'
-  get 'bills/index', to: 'bills#index'
 
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
   
   resources :users, except: 'new'
   resources :articles
+  resources :bills
 
 
   root 'welcome#index'
