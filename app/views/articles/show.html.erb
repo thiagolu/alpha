@@ -3,9 +3,12 @@
 	<%= render 'article_header' %>
 
 	<div class="container">
+		
+					Categories: <%= render @article.categories %>
 
 		<hr>
-			<h4>
+			<h4><% if @article.categories.any? %>
+					<% end %>
 			</h4>
 			<hr>
 			<%= render 'article_content' %>
