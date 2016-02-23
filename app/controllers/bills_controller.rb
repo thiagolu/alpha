@@ -15,7 +15,7 @@ class BillsController < ApplicationController
     @bill.user = current_user
     if @bill.save
       flash[:success] = "Conta Criada"
-      redirect_to @bill
+      redirect_to bills_path
     else
       flash[:danger] = "Conta não foi Criada"
       render 'new'
