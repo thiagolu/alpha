@@ -3,7 +3,8 @@ class BillsController < ApplicationController
   before_action :find_bill, only: :show
 
   def index
-    @bills = current_user.bills.paginate(page: params[:page], per_page: 4)
+    @bills = current_user.bills
+    @total = @bills.sum(:value)
   end
 
   def new

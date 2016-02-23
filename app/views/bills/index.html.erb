@@ -8,23 +8,31 @@
 
 <hr>
 <hr>
-<div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title">Contas</h3>
-  </div>
-  <div class="panel-body">
-    <table class="table">
-      <tr>Nome da conta</tr>
-      <tr>Descrição</tr>
-      <tr>Valor</tr>
-      <% @bills.each do |bill| %>
-      <tr>
-
-        <td><%= bill.bill_name %></td>
-        <td><%= bill.description %></td>
-        <td><%= bill.value %></td>
-      </tr>
-      <% end %>
-    </table>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <div class="container">
+        <h3 class="panel-title">
+        Contas
+        </h3>
+        <div class="container">
+          Total: <strong><%= @total%></strong>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <tr><td><strong>Nome da conta</strong></td>
+        <td><strong>Descrição</strong></td>
+        <td><strong>Valor</strong></td>
+        </tr>
+        <% @bills.each do |bill| %>
+        <tr>
+          <td><%= bill.bill_name %></td>
+          <td><%= bill.description %></td>
+          <td><%= bill.value %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>
