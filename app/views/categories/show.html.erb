@@ -2,7 +2,7 @@
 	<div class="row">
 <%= will_paginate @category_articles %>
 		<h3><%= @category.category_name %></h3>
-		<hr>a 
+		<h5><%= link_to 'editar esta categoria', edit_category_path(@category) %></h5>
 		<%= render 'articles/article', obj: @category_articles %>
 	</div>
 <%= will_paginate @category_articles %>
