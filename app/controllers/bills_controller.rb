@@ -3,7 +3,7 @@ class BillsController < ApplicationController
   before_action :find_bill, only: :show
 
   def index
-    
+    @bills = current_user.bills.paginate(page: params[:page], per_page: 4)
   end
 
   def new
@@ -12,6 +12,7 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
+    @bill.user = current_user
     if @bill.save
       flash[:success] = "Conta Criada"
       redirect_to @bill
