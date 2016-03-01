@@ -5,6 +5,8 @@ class BillsController < ApplicationController
   def index
     @bills = current_user.bills
     @total = @bills.sum(:value)
+    @paid = Bill.get_bills(@bills)['paid']
+    @not_paid = Bill.get_bills(@bills)['not_paid']
   end
 
   def new
