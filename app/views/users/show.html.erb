@@ -1,14 +1,14 @@
 <div class="container">
-	
-
-<div class="row center">
-	<h1>Hello <%= @user.username.capitalize %></h1>
-	<div>
-		<%= gravatar_for @user %>
-	</div>
-	<%= will_paginate @user_articles %>
-</div>
-
-<h4 align="center"> Your articles</h4>
-<%= render 'articles/article', obj: @user_articles %>
+  <div class="row center">
+    <div class="profile-box">
+      <h1>E ae!! <%= @user.username.capitalize %></h1>
+      <div>
+        <%= gravatar_for @user %>
+      </div>
+    </div>
+    <%= will_paginate @user_articles %>
+  </div>
+  <hr>
+  <h4 align="center"> Estes são os artigos escritos por você:</h4>
+  <%= render 'articles/article', obj: @user_articles %>
 </div>
