@@ -130,19 +130,41 @@ $navbar-default-bg: #242020;
 }
 
 .article-actions {
-	border-top: 1px solid #eaeaea;
 	padding-top: 10px; 
 }
 
 .article-title {
 	font-weight: bold;
-	font-size: 1.5em;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.titulo {
+  color: black;
+  font-size: 2.5em;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.badge-index {
+  margin: 10px;
 }
 
 .article-body {
 	border-top: 1px solid #eaeaea;
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+
+.article-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  border-radius: 15%;
 }
 
 .jumbotron h2 {
@@ -198,7 +220,7 @@ $navbar-default-bg: #242020;
 html,
 body {
     width: 100%;
-    background-color: #F8F8FF;
+    background-color: white;
     height: 100%;
 }
 

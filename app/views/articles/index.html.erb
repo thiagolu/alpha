@@ -1,19 +1,15 @@
 <div class="container">
-	
-<div class="row center">
-<div class="container index-articles">
-	
-	<h2 align="center">Aqui poderia ter uma frase boa</h2>
-	<small>com um comentário embaixo</small>
-</div>
-	<div class="pull-left">
-		
-	<%= will_paginate %>
-	</div>
-</div>
-	<hr>
-<%= render 'article', obj: @articles %>
-<div class="row center">
-	<%= will_paginate %>
-</div>
+  
+  <div class="row center">
+    <div class="container index-articles">
+      
+      <h2 align="center">Aqui poderia ter uma frase boa</h2>
+      <small>com um comentário embaixo</small>
+    </div>
+    <%= will_paginate %>
+  </div>
+  <%= render 'article', obj: @articles %>
+  <div class="row center">
+    <%= will_paginate %>
+  </div>
 </div>
