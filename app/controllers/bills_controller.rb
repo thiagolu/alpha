@@ -16,6 +16,7 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(bill_params)
     @bill.user = current_user
+    @bill.paid = false
     if @bill.save
       flash[:success] = "Conta Criada"
       redirect_to bills_path
