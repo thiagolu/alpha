@@ -1,6 +1,6 @@
 class BillsController < ApplicationController
 
-  before_action :find_bill, only: :show
+  before_action :find_bill, only: [ :show, :pay ]
 
   def index
     @bills = current_user.bills
@@ -28,6 +28,12 @@ class BillsController < ApplicationController
 
   def show
     
+  end
+
+  def pay
+    @bill.toggle(:paid)
+    @bill.save
+    redirect_to bills_path
   end
 
   private

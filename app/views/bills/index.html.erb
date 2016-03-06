@@ -15,7 +15,7 @@
         Contas
         </h3>
         <div class="container">
-          Total: <strong><%= @total%></strong>
+          Total: <strong><%= @paid.sum(:value)%></strong>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
         Contas
         </h3>
         <div class="container">
-          Total: <strong><%= @total%></strong>
+          Total: <strong><%= @not_paid.sum(:value)%></strong>
         </div>
       </div>
     </div>
@@ -58,6 +58,7 @@
           <td><%= bill.bill_name %></td>
           <td><%= bill.description %></td>
           <td><%= bill.value %></td>
+          <td><%= link_to 'Pay', pay_path(bill) %></td>
         </tr>
         <% end %>
       </table>

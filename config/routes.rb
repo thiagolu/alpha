@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'header', to: 'welcome#header'
   
+  get 'bills/:id/pay', to: 'bills#pay', as:'pay'
   
   resources :users, except: 'new'
   resources :articles

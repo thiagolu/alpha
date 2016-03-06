@@ -1,6 +1,6 @@
 <div class="container">
 
-	<h1 align="center">Listing All Categories</h1>
+	<h1 align="center">Categoria do Blog</h1>
 	<hr>
 	<div class="row center">
 		<div class="col-md-8 col-md-offset-2">
@@ -10,7 +10,7 @@
 		</div>
 	</div>
 </div>
-
-	<% if is_admin? %>
-		<%= link_to "New category", new_category_path, class: "btn btn-success" %>
-	<% end %>
+<hr>
+<div class="container" align="center">
+		<%= link_to "Criar nova categoria", new_category_path, class: "btn btn-success" %>
+</div>
