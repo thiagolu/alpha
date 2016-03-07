@@ -1,18 +1,24 @@
 <div class="container">
-    <div class="row">
-      <%= link_to 'Criar uma Conta', new_bill_path %>
+  <div class="row">
+    <div>
+      <h3>Gerênciamento de Contas</h3>
     </div>
   </div>
 </div>
+</div>
 <div class="container">
-
-<hr>
-<hr>
+  <hr>
+  <div align="center">
+    
+    <%= link_to 'Criar uma Conta', new_bill_path, class: 'btn btn-info' %>
+    <%= link_to 'Apagar contas pagas', bills_clear_paid_bills_path, class: 'btn btn-danger' %>
+  </div>
+  <hr>
   <div class="panel panel-success">
     <div class="panel-heading">
       <div class="container">
         <h3 class="panel-title">
-        Contas
+          Contas Pagas neste mês
         </h3>
         <div class="container">
           Total: <strong><%= @paid.sum(:value)%></strong>
@@ -22,8 +28,8 @@
     <div class="panel-body">
       <table class="table">
         <tr><td><strong>Nome da conta</strong></td>
-        <td><strong>Descrição</strong></td>
-        <td><strong>Valor</strong></td>
+          <td><strong>Categoria</strong></td>
+          <td><strong>Valor</strong></td>
         </tr>
         <% @paid.each do |bill| %>
         <tr>
@@ -40,7 +46,7 @@
     <div class="panel-heading">
       <div class="container">
         <h3 class="panel-title">
-        Contas
+          Contas que ainda não foram pagas
         </h3>
         <div class="container">
           Total: <strong><%= @not_paid.sum(:value)%></strong>
@@ -50,8 +56,8 @@
     <div class="panel-body">
       <table class="table">
         <tr><td><strong>Nome da conta</strong></td>
-        <td><strong>Descrição</strong></td>
-        <td><strong>Valor</strong></td>
+          <td><strong>Categoria</strong></td>
+          <td><strong>Valor</strong></td>
         </tr>
         <% @not_paid.each do |bill| %>
         <tr>

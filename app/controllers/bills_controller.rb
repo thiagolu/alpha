@@ -30,6 +30,12 @@ class BillsController < ApplicationController
     
   end
 
+  def clear_paid_bills
+    paid_bills = current_user.bills.where(paid: true)
+    paid_bills.destroy_all
+    redirect_to bills_path
+  end
+
   def pay
     @bill.toggle(:paid)
     @bill.save
